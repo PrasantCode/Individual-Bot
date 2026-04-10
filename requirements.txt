@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-dotenv
+yfinance
+numpy
+pandas
+feedparser
+openai
+twilio
+requests
