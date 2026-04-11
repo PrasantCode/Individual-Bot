@@ -1,14 +1,20 @@
 name: Hourly AI News Digest
 
-   on:
-     schedule:
-       - cron: '0 * * * *'
-     workflow_dispatch:
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
 
-   jobs:
-     trigger:
-       runs-on: ubuntu-latest
-       steps:
-         - name: Trigger digest
-           run: |
-             curl -X POST https://individual-bot.onrender.com/run-digest
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake up server
+        run: curl https://individual-bot.onrender.com/
+        continue-on-error: true
+
+      - name: Wait for server to wake
+        run: sleep 60
+
+      - name: Trigger digest
+        run: curl -X POST https://individual-bot.onrender.com/run-digest --max-time 30
