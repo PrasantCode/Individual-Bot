@@ -1,0 +1,14 @@
+name: Hourly AI News Digest
+
+   on:
+     schedule:
+       - cron: '0 * * * *'
+     workflow_dispatch:
+
+   jobs:
+     trigger:
+       runs-on: ubuntu-latest
+       steps:
+         - name: Trigger digest
+           run: |
+             curl -X POST https://individual-bot.onrender.com/run-digest
