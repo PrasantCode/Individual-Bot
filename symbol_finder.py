@@ -10,7 +10,7 @@ _ALIASES: dict[str, str] = {
     "OLA ELECTRIC":     "OLAELECTRIC.NS",
     "OLAELECTRIC":      "OLAELECTRIC.NS",
     # New-age / IPO stocks that yf.Search often misses
-    "ZOMATO":           "ZOMATO.NS",
+    "ETERNAL":           "ETERNAL.NS",
     "NYKAA":            "NYKAA.NS",
     "FSN":              "NYKAA.NS",
     "DELHIVERY":        "DELHIVERY.NS",
